@@ -1,6 +1,7 @@
 let currentInput = null;
 let storedNumber = null;
 let selectedOperator = null;
+const decimalPlaces = 4;
 
 function add(a, b) {
   return a + b;
@@ -94,10 +95,12 @@ equals.addEventListener("click", () => {
     display.textContent = "ERROR ayayai";
     return;
   }
-  display.textContent = operate(
-    selectedOperator,
-    Number(storedNumber),
-    Number(currentInput)
+  display.textContent = parseFloat(
+    operate(
+      selectedOperator,
+      Number(storedNumber),
+      Number(currentInput)
+    ).toFixed(decimalPlaces)
   );
 
   storedNumber = display.textContent;
