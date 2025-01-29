@@ -92,7 +92,6 @@ operatorButtons.forEach((button) => {
 
 equals.addEventListener("click", () => {
   if (!storedNumber || !currentInput || !selectedOperator) {
-    display.textContent = "ERROR ayayai";
     return;
   }
   display.textContent = parseFloat(
@@ -103,7 +102,7 @@ equals.addEventListener("click", () => {
     ).toFixed(decimalPlaces)
   );
 
-  storedNumber = display.textContent;
+  storedNumber = Number(display.textContent);
   currentInput = null;
   selectedOperator = null;
 });
